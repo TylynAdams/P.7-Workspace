@@ -1,0 +1,3 @@
+mixin inputField(nameOfField, displayText, inputType, placeholderText = '') 
+    label(for=nameOfField)=displayText
+    input(type=inputType, name=nameOfField, id=nameOfField, value=placeholderText)

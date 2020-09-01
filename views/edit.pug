@@ -1,0 +1,21 @@
+html
+    head
+        title Edit
+        h1= "Edit " + user.username
+    body
+    block test
+    include ./includes/mixins.pug
+    form(action="/update" method="post")
+        div
+            +inputField("username", "Username: ", "text", user.username)
+        div
+            +inputField("name", "Name: ", "text", user.name)
+        div
+            +inputField("email", "Email: ", "email", user.email)
+        div
+            +inputField("age", "Age: ", "number", user.age)
+        div
+            +inputField("password", "Password: ", "password", user.password)
+        div
+            input(type="hidden", name="update", value=user.userId)
+            button(type="submit") Update User

@@ -1,0 +1,23 @@
+html
+    head
+        title User List
+        h1 List of Users     
+    body
+        form(action="/", method="get")
+            button(type="submit") Add User
+        ul
+            each user in users
+                li(style="list-style-type: none")
+                    div
+                        span= "Username: " + user.username + " "
+                        span= "Name: " + user.name + " "
+                        span= "Email: " + user.email + " "
+                        span= "Age: " + user.age + " "
+                        span= "Password: " + user.password + " "
+                        span= "test: " + user.userId + " "
+                        form(action="/edit" method="post" id="edit")
+                            input(type="hidden", name="edit", value=user.userId)
+                            button(type="submit") Edit
+                        form(action="/delete" method="post", id="delete")
+                            input(type="hidden", name="delete", value=user.userId)                        
+                            button(type="submit") Delete

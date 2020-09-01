@@ -1,0 +1,15 @@
+include ./mixin.pug
+
+form(action="/create" method="post")
+    div
+        +inputField("username", "Username: ", "text")
+    div
+        +inputField("name", "Name: ", "text")
+    div
+        +inputField("email", "Email: ", "email")
+    div
+        +inputField("age", "Age: ", "number")
+    div
+        +inputField("password", "Password: ", "password")
+    div
+        button(type="submit") Create User
